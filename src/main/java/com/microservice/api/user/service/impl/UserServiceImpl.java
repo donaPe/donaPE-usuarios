@@ -18,4 +18,9 @@ public class UserServiceImpl implements UserService {
     public Mono<User> validationLogin(LoginRequest request) {
         return Mono.just(userRepository.findByDniAndPassword(request.getDni(), request.getPassword()));
     }
+
+    @Override
+    public Mono<User> save(User user) {
+        return Mono.just(userRepository.save(user));
+    }
 }

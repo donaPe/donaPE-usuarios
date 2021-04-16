@@ -8,4 +8,6 @@ public interface UserService {
 
     Mono<User> validationLogin(LoginRequest request);
 
+    Mono<User> save(User user);
+
 }
